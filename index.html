@@ -81,8 +81,8 @@ body, html {
     </div>
     <!-- Hide this text on small devices -->
     <div class="w3-col m6 w3-center w3-padding-large animate__animated animate__backInRight">
-		<p><b><i class="w3-margin-center"></i>Start second</b></p> <input id="start" type="number" /><br>
-		<p><b><i class="w3-margin-center"></i>End second</b></p> <input id="end" type="number" /><br>
+		<p><b><i class="w3-margin-center"></i>Start second</b> <span id="startmin"></span> </p> <input id="start" type="number" /> <div id="startminasd"></div> <br>
+		<p><b><i class="w3-margin-center"></i>End second</b> <span id="endmin"></span> </p> <input id="end" type="number" /><br>
     </div>
   </div>
   
@@ -91,6 +91,14 @@ body, html {
 
 	$(document).ready(function(){
 		//$("#botoncito").click(redirect());
+		$('#start').keyup(function() {
+			$('#startmin').text(($(this).val() / 60).toString().split(".")[0] +":"+ Number((parseFloat("0."+($(this).val() / 60).toString().split(".")[1])*60).toFixed(1)).toString());
+		});
+		
+		$('#end').keyup(function() {
+			$('#endmin').text(($(this).val() / 60).toString().split(".")[0] +":"+ Number((parseFloat("0."+($(this).val() / 60).toString().split(".")[1])*60).toFixed(1)).toString());
+		});
+		
 	});
 
 function redirect() {
