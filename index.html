@@ -94,7 +94,14 @@ body, html {
 	});
 
 function redirect() {
-	var url = $('#url').val().split("=")[1];
+	var url = 0
+	
+	if( $("#url").val().split("/")[2] == "youtu.be" ){
+		url = $("#url").val().split("/")[3]
+	}
+	else{
+		$('#url').val().split("=")[1];
+	}
 	var start = $('#start').val();
 	var end = $('#end').val();
 	if ( url == "" || start == "" || end == ""){
@@ -104,28 +111,6 @@ function redirect() {
 		window.location.href = "video.html?url="+url+"&start="+start+"&end="+end;
 	}
 	
-}
-
-function myFunction() {
-
-	const months = [
-		"Inteligencia: Se trata de ver a Dios en tu día. Reconocer su rostro en lo que te rodea y transcurre.", 
-		"Consejo: Discernir la voluntad de Dios. Encontrar lo que Él quiere para mi para poder pensar como Él y actual como Él.", 
-		"Ciencia: Ver las cosas como Dios las ve, con sus ojos.", 
-		"Temor de Dios: Asumir pobreza delante de Él. No es temerle por daño sino como un niño teme a separarse de su papá. Sentir seguridad con Él.", 
-		"Piedad: Reconocerse hijo de Dios y acogido en su casa.", 
-		"Fortaleza: La respuesta de Dios a la debilidad del ser humano. Nos hace capaces de lo que sentimos humanamente imposible fiados en su amor.",
-		"Sabiduría: Viene de saborear. Podes saber mucha teología, pero saber y sabiduría de Dios se experimenta. Engloba a los dones. El más sabio es quien saboreó los dones y aún lo hace.", 
-		];
-	const randomMonth = months[Math.floor(Math.random() * months.length)];
-	document.getElementById("myDIV").textContent=randomMonth;
-
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
 }
 </script>
 </body>
