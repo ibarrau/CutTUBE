@@ -100,7 +100,7 @@ function redirect() {
 		url = $("#url").val().split("/")[3]
 	}
 	else{
-		$('#url').val().split("=")[1];
+		url = $('#url').val().split("=")[1].split("&")[0];
 	}
 	var start = $('#start').val();
 	var end = $('#end').val();
