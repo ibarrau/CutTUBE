@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>CutTUBE</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Website to create a link of a youtube video starting and ending in specific seconds" />
+<meta name="author" content="ibarrau">
+<meta name="keywords" content="YouTube cut, cut youtube, cortar videos, cortar youtube"/>
+<meta name="distribution" content="global" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="copyright" content="ibarrau" />		
+<meta property="og:locale" content="en_EN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CutTUBE">
+<meta property="og:url" content="http://www.cuttube.tk/">
+<meta property="og:site_name" content="CutTUBE">		
+<link rel="icon" href="ico.png" type="image/x-icon"> 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -56,18 +69,18 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><span class="w3-hide-small">CutTUBE</span></span>
+    <span class="w3-center w3-padding-large w3-xlarge w3-wide w3-animate-opacity" style="color:#fff"><span class="w3-hide-small">CutTUBE</span></span>
   </div>
 </div>
 
   <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
+    <div class="w3-col m6 w3-center w3-padding-large animate__animated animate__backInLeft">
       <p><b><i class="w3-margin-center"></i>Video URL</b></p>
       <input id="url" type="text" /><br>
 	  <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:30px" onclick="redirect()" id="botoncito">Create CutTUBE Link</button>
     </div>
     <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-center w3-padding-large">
+    <div class="w3-col m6 w3-center w3-padding-large animate__animated animate__backInRight">
 		<p><b><i class="w3-margin-center"></i>Start second</b></p> <input id="start" type="number" /><br>
 		<p><b><i class="w3-margin-center"></i>End second</b></p> <input id="end" type="number" /><br>
     </div>
