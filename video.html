@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>CutTUBE Video</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Website to create a link of a youtube video starting and ending in specific seconds" />
+<meta name="author" content="ibarrau">
+<meta name="keywords" content="YouTube cut, cut youtube, cortar videos, cortar youtube"/>
+<meta name="distribution" content="global" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="copyright" content="ibarrau" />		
+<meta property="og:locale" content="en_EN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CutTUBE">
+<meta property="og:url" content="http://www.cuttube.tk/">
+<meta property="og:site_name" content="CutTUBE">		
+<link rel="icon" href="CutTUBEicon.png" type="image/x-icon"> 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -24,7 +37,7 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('backdark.png');
+  background-image: url('blackWL.jpg');
   min-height: 100%;
 }
 
@@ -69,6 +82,8 @@ body, html {
 		var start = getQueryString('start');
 		var end = getQueryString('end');		
 		addVideo(url, start, end);
+		$("#urlcopy").val(window.location.href);
+		
 	});
 	function getQueryString() {
 	  var key = false, res = {}, itm = null;
@@ -117,15 +132,36 @@ body, html {
 
 
 <body>
+
+
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-	<div id="dentro">
+  <div class="w3-display-middle w3-center" style="white-space:nowrap;">
+		<h1 style="text-align:center;">Here is the CutTUBE link of your YouTube video!</h1><br>
+		<button class="w3-button w3-padding-small w3-light-grey animate__animated animate__shakeY" onclick="" id="atras" href="index.html">Go Back</button><br /><br>
+	<div id="dentro" class="animate__animated animate__bounceInUp">
 		<!--<iframe allowfullscreen="" frameborder="0" height="480" src="http://www.youtube.com/embed/UkWd0azv3fQ?start=90" width="720"></iframe>-->
 	</div>
+		<input id="urlcopy" class="animate__animated animate__shakeY" type="text" />	  
+		<button class="w3-button w3-padding-small w3-light-grey animate__animated animate__shakeY" onclick="copyClip()" id="copybutton">Copy CutTUBE Link</button>
   </div>
 </div>
 
+  
+<script>
+function copyClip() {
+  /* Get the text field */
+  var copyText = document.getElementById("urlcopy");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+}
+</script>  
   
 </body>
 </html>
