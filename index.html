@@ -134,7 +134,12 @@ function redirect() {
 		alert("Por favor completar todos los campos.");
 	}
 	else {
-		window.location.href = "video.html?url="+url+"&start="+start+"&end="+end;
+		if (start >= end){
+			alert("El tiempo de inicio no puede ser mayor al tiempo de fin.");
+		}
+		else {
+			window.location.href = "video.html?url="+url+"&start="+start+"&end="+end;
+		}
 	}
 	
 }

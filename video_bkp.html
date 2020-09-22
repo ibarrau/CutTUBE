@@ -24,6 +24,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
   color: #777;
+  line-height: 1.8;
 }
 
 /* Create a Parallax Effect */
@@ -32,38 +33,38 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  line-height: 1.8;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('blackWL.jpg');
+  min-height: 100%;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
     background-attachment: scroll;
-    max-height: 100%;  
+    min-height: 100%;
+  }
 }
 
-
-.container {
-	padding-top:20px;
-	text-align:center;
-	height:100%;
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
 }
-
-@media (min-width: 500px) {
-
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
-@media (max-width: 499px){
-	.iframe-container{
-	  position: relative;
-	  width: 100%;
-	  padding-bottom: 50%; 
-	  height: 0;
-	}
-	.iframe-container iframe{
-	  position: absolute;
-	  top:0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	}
-}
-
-
 
 
 </style>
@@ -141,17 +142,19 @@ body, html {
 		</script>
 
 <body>
+
+
 <!-- First Parallax Image with Logo Text -->
-<div class="container" style="background-image: url('blackWL.jpg');" id="home">
-  <div class="">
-		<h2>Here is the CutTUBE link of your YouTube video!</h2><br>
-		<button class="animate__animated animate__shakeY" onclick="" id="atras" href="index.html">Go Back</button><br /><br>
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-container w3-center w3-display-middle">
+		<h2 style="text-align:center;">Here is the CutTUBE link of your YouTube video!</h2><br>
+		<button class="w3-button w3-padding-small w3-light-grey animate__animated animate__shakeY" onclick="" id="atras" href="index.html">Go Back</button><br /><br>
 	<div id="dentro" class="iframe-container animate__animated animate__bounceInUp">
 
 	</div>
 	<br>
 		<input id="urlcopy" class="animate__animated animate__shakeY" type="text" />	  
-		<button class="animate__animated animate__shakeY" onclick="copyClip()" id="copybutton">Copy CutTUBE Link</button>
+		<button class="w3-button w3-padding-small w3-light-grey animate__animated animate__shakeY" onclick="copyClip()" id="copybutton">Copy CutTUBE Link</button>
   </div>
 </div>
 
